@@ -1,0 +1,220 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding Cards</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+        display: flex;
+        justify-content:flex-end;
+        align-items: center;
+        unicode-bidi: isolate;
+        gap: 25px;
+        margin-top: 50px;
+        }
+
+        .Explore_The_World,
+        .Wild_forest,
+        .City_on_winter,
+        .Sunny_beach,
+        .Mountains{
+            width: 6vw;
+            height:80vh;
+            border-radius: 50px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .Explore_The_World:hover,
+        .Wild_forest:hover,
+        .City_on_winter:hover,
+        .Sunny_beach:hover,
+        .Mountains:hover{
+                cursor:pointer;
+                width: 60vw;
+            transition: 0.7s ease-in;
+            transition: 0.7s ease-out;
+        }
+        /* .Explore_The_World:active,
+        .Wild_forest:active,
+        .City_on_winter:active,
+        .Sunny_beach:active,
+        .Mountains:active
+        {
+            
+        } */
+
+
+        .Explore_The_World {
+            background-image: url(./1.avif);
+        }
+
+        .Wild_forest {
+            background-image: url(./2.avif);
+        }
+
+        .Sunny_beach {
+            background-image: url(./3.avif);
+        }
+
+        .City_on_winter {
+            background-image: url(./4.avif);
+        }
+
+        .Mountains {
+            background-image: url(./5.avif);
+            margin-right:50px;
+        }
+
+        h3{
+            visibility: hidden;
+            position: absolute;
+            bottom: 15px;
+            align-items: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <div class="Explore_The_World " onclick="myId()">
+            <h3 >Explore The World</h3>
+        </div>
+        <div class="Wild_forest" >
+            <h3>wild Forest</h3>
+        </div>
+        <div class="Sunny_beach" >
+            <h3>Sunny Beach</h3>
+        </div>
+        <div class="City_on_winter" >
+            <h3>City On Winter</h3>
+        </div>
+        <div class="Mountains">
+            <h3>Mountains - Clouds</h3>
+        </div>
+        
+    </div>
+</body>
+<script src="script.js"></script>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expanding Cards</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+    
+        * {
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: 'Muli', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        }
+    
+        .container {
+            display: flex;
+            width: 90vw;
+        }
+    
+        .panel {
+            background-size: auto 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+            border-radius: 50px;
+            color: #fff;
+            cursor: pointer;
+            flex: 0.5;
+            margin: 10px;
+            position: relative;
+            transition: flex 0.7s ease-in;
+        }
+    
+        .panel h3 {
+            font-size: 24px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            opacity: 0;
+        }
+    
+        .panel.active {
+            flex: 5;
+        }
+    
+        .panel.active h3 {
+            opacity: 1;
+            transition: opacity 0.3s ease-in 0.4s;
+        }
+    
+        @media (max-width: 480px) {
+            .container {
+                width: 100vw;
+            }
+    
+            .panel:nth-of-type(4),
+            .panel:nth-of-type(5) {
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel active"
+            style="background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
+            <h3>Explore The World</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url('https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
+            <h3>Wild Forest</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80')">
+            <h3>Sunny Beach</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url('https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80')">
+            <h3>City on Winter</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
+            <h3>Mountains - Clouds</h3>
+        </div>
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
